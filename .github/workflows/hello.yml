@@ -15,5 +15,7 @@ jobs:
     steps:
       - name: Hello World
         run: echo "Hello World"
+      - name: Checkout Repo
+        uses: actions/checkout@v4
       - name: List Directory of Runner
         run: ls -la
