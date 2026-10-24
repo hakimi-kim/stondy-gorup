@@ -1,0 +1,17 @@
+name: Hello World
+
+# Triggers
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+    
+# jobs
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello World
+        run: echo "Hello World"
