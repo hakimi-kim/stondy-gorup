@@ -6,12 +6,10 @@ on:
     branches:
       - main
       - master
-  workflow_dispatch:
     
 permissions: 
   contents: read
   packages: write
-  pull-requests: read
     
 # jobs
 jobs:
