@@ -136,6 +136,12 @@ public class PipelinesController : ControllerBase
         return Ok();
     }
 
+    [HttpGet("/testt")]
+    public IActionResult TestJer()
+    {
+        return Ok("SIAP CD");
+    }
+
     /// <summary>
     /// Returns one pipeline by its id.
     /// </summary>
