@@ -57,7 +57,7 @@ jobs:
           key: ${{ secrets.DIGITAL_OCEAN_KEY }}
           passphrase: ${{ secrets.SERVER_PASSPHRASE }}
           script: |
-            cd /farish
+            cd ~/farish
             docker compose pull webapplication2
             docker compose up webapplication2 -d
       
