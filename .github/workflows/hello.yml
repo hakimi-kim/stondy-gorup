@@ -57,7 +57,7 @@ jobs:
           key: ${{ secrets.DIGITAL_OCEAN_KEY }}
           script: |
             cd docker/farish
-            docker compose pull pipeline-api
-            docker compose up pipeline-api -d
+            docker compose pull webapplication2
+            docker compose up webapplication2 -d
       
       
