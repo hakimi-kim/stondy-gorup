@@ -44,5 +44,20 @@ jobs:
           file: ./PipelineProcessor.API/Dockerfile
           push: true
           tags: ghcr.io/${{ github.repository }}:latest
+          
+  deploy:
+    runs-on: ubuntu-latest
+    needs: docker-image
+    steps:
+      - name: Deploy to Digital Ocean
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DIGITAL_OCEAN_HOST }}
+          username: ${{ secrets.DIGITAL_OCEAN_USERNAME }}
+          key: ${{ secrets.DIGITAL_OCEAN_KEY }}
+          script: |
+            cd docker/farish
+            docker compose pull pipeline-api
+            docker compose up pipeline-api -d
       
       
